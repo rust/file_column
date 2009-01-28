@@ -2,6 +2,8 @@ require 'fileutils'
 require 'tempfile'
 require 'magick_file_column'
 
+Inflector = ActiveSupport::Inflector unless defined?(Inflector)
+
 module FileColumn # :nodoc:
   def self.append_features(base)
     super
@@ -618,9 +620,7 @@ module FileColumn # :nodoc:
     def file_column(attr, options={})
       options = DEFAULT_OPTIONS.merge(options) if options
 
-      my_options = FileColumn::init_options(options,
-                                            Inflector.underscore(self.name).to_s,
-                                            attr.to_s)
+      my_options = FileColumn::init_options(options, Inflector.underscore(self.name).to_s, attr.to_s)
 
       state_attr = "@#{attr}_state".to_sym
       state_method = "#{attr}_state".to_sym

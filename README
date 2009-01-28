@@ -24,6 +24,13 @@ end
 
 * easy integration with RMagick to resize images and/or create thumb-nails.
 
+CHANGES
+=====
+
+* support Rails 2.2.2 (by Shin-ichiro OGAWA)
+
+* don't delete temporary file when same name image is uploaded.
+
 USAGE
 =====
 
@@ -50,5 +57,5 @@ BUGS & FEEDBACK
 ===============
 
 Bug reports (as well as patches) and feedback are very welcome. Please send it to
-sebastian.kanthak@muehlheim.de
+rust.stnard@gmail.com
 
